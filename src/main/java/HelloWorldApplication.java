@@ -1,4 +1,6 @@
 import io.dropwizard.Application;
+import io.dropwizard.configuration.EnvironmentVariableSubstitutor;
+import io.dropwizard.configuration.SubstitutingSourceProvider;
 import io.dropwizard.setup.Bootstrap;
 import io.dropwizard.setup.Environment;
 
@@ -14,6 +16,12 @@ public class HelloWorldApplication extends Application<HelloWorldConfiguration> 
 
   @Override
   public void initialize(Bootstrap<HelloWorldConfiguration> bootstrap) {
+    // Enable variable substitution with environment variables
+    bootstrap.setConfigurationSourceProvider(
+      new SubstitutingSourceProvider(bootstrap.getConfigurationSourceProvider(),
+        new EnvironmentVariableSubstitutor(false)
+      )
+    );
   }
 
   @Override
