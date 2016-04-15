@@ -11,6 +11,3 @@
 # Maven
 .idea/libraries
 target/
-
-# Environment dependant configuration
-*.yml

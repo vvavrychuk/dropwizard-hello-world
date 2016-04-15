@@ -1,0 +1,8 @@
+server:
+  type: simple
+  connector:
+    type: http
+    port: ${env.PORT}
+
+template: Hello, %s!
+defaultName: Stranger
