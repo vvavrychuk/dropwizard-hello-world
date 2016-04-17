@@ -1,8 +1,10 @@
 server:
   type: simple
+  applicationContextPath: /api
+  adminContextPath: /admin
   connector:
     type: http
-    port: ${PORT:-default 8080}
+    port: ${PORT:-8080}
 
 template: Hello, %s!
 defaultName: Stranger

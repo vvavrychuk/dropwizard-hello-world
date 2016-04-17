@@ -11,3 +11,4 @@
 # Maven
 .idea/libraries
 target/
+dependency-reduced-pom.xml
